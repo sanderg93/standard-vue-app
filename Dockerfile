@@ -1,6 +1,6 @@
 FROM node:14
 
-WORKDIR /api
+WORKDIR /src
 
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
@@ -11,7 +11,7 @@ RUN npm install
 # RUN npm ci --only=production
 
 # Bundle app source
-COPY . .
+COPY . ./
 
 EXPOSE 3080
-CMD [ "node", "server.js" ]
+CMD [ "node", "api/server" ]
