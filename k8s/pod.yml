@@ -1,0 +1,20 @@
+# Simple kubernetes Pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-pod
+  labels:
+    app: web
+spec:
+  containers:
+    - name: web-ctr
+      image: sanderg93/node-vue-app:latest
+      ports:
+        - containerPort: 3080
+      resources:
+        limits:
+          memory: 512Mi
+          cpu: "1"
+        requests:
+          memory: 256Mi
+          cpu: "0.2"
